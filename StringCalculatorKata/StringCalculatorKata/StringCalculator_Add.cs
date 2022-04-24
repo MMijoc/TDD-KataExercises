@@ -4,12 +4,13 @@ namespace StringCalculatorKata;
 
 public class StringCalculator_Add
 {
+	private StringCalculator _calculator = new StringCalculator();
+
 	[Fact]
 	public void ReturnZeroGivenEmptyString()
 	{
-		var calculator = new StringCalculator();
 
-		var result = calculator.Add("");
+		var result = _calculator.Add("");
 
 		Assert.Equal(0, result);
 	}
@@ -19,9 +20,7 @@ public class StringCalculator_Add
 	[InlineData("2", 2)]
 	public void ReturnNumberGivenStringWithOneNumber(string numbers, int expectedResult)
 	{
-		var calculator = new StringCalculator();
-
-		var result = calculator.Add(numbers);
+		var result = _calculator.Add(numbers);
 
 		Assert.Equal(expectedResult, result);
 	}
@@ -31,9 +30,7 @@ public class StringCalculator_Add
 	[InlineData("2,3", 5)]
 	public void ReturnSumGivenStringWithTwoCommaSeperatedNumbers(string numbers, int expectedResult)
 	{
-		var calculator = new StringCalculator();
-
-		var result = calculator.Add(numbers);
+		var result = _calculator.Add(numbers);
 
 		Assert.Equal(expectedResult, result);
 	}
