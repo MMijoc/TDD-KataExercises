@@ -1,4 +1,6 @@
-﻿namespace StringCalculatorKata;
+﻿using System.Linq;
+
+namespace StringCalculatorKata;
 
 public class StringCalculator
 {
@@ -9,6 +11,10 @@ public class StringCalculator
 			return 0;
 		}
 
-		return int.Parse(numbers);
+		var result = numbers.Split(",")
+			.Select(s => int.Parse(s))
+			.Sum();
+
+		return result;
 	}
 }

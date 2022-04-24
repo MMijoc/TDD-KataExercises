@@ -25,4 +25,16 @@ public class StringCalculator_Add
 
 		Assert.Equal(expectedResult, result);
 	}
+
+	[Theory]
+	[InlineData("1,2", 3)]
+	[InlineData("2,3", 5)]
+	public void ReturnSumGivenStringWithTwoCommaSeperatedNumbers(string numbers, int expectedResult)
+	{
+		var calculator = new StringCalculator();
+
+		var result = calculator.Add(numbers);
+
+		Assert.Equal(expectedResult, result);
+	}
 }
