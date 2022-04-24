@@ -34,4 +34,14 @@ public class StringCalculator_Add
 
 		Assert.Equal(expectedResult, result);
 	}
+
+	[Theory]
+	[InlineData("1,2,3", 6)]
+	[InlineData("2,3,4", 9)]
+	public void ReturnSumGivenStringWithThreeCommaSeperatedNumbers(string numbers, int expectedResult)
+	{
+		var result = _calculator.Add(numbers);
+
+		Assert.Equal(expectedResult, result);
+	}
 }
