@@ -10,8 +10,9 @@ public class StringCalculator
 		{
 			return 0;
 		}
+		var delimiters = new [] { ',', '\n' };
 
-		var result = numbers.Split(",")
+		var result = numbers.Split(delimiters)
 			.Select(s => int.Parse(s))
 			.Sum();
 
