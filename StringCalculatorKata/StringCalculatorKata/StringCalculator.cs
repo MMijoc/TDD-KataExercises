@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace StringCalculatorKata;
@@ -19,9 +20,23 @@ public class StringCalculator
 			delimiters.Add(newDelimiter);
 			numbers = numbers.Remove(0, 4);
 		}
-		
-		var result = numbers.Split(delimiters.ToArray())
-			.Select(s => int.Parse(s))
+
+		var numberList = numbers
+			.Split(delimiters.ToArray())
+			.Select(s => int.Parse(s));
+
+		var negatives = numberList.Where(n => n < 0);
+
+		if (negatives.Any())
+		{
+			string negativeString = string.Join(
+				',', negatives.Select(n => n.ToString())
+				);
+
+			throw new Exception($"Negatives not allowed: {negativeString}");
+		}
+
+		var result = numberList
 			.Sum();
 
 		return result;
