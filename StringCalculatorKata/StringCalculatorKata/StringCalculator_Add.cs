@@ -13,4 +13,15 @@ public class StringCalculator_Add
 
 		Assert.Equal(0, result);
 	}
+
+	 [Theory]
+	 [InlineData("1", 1)]
+	public void ReturnOneGivenStringWithOne(string numbers, int expectedResult)
+	{
+		var calculator = new StringCalculator();
+
+		var result = calculator.Add(numbers);
+
+		Assert.Equal(expectedResult, result);
+	}
 }
