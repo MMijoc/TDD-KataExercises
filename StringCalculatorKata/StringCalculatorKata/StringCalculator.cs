@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace StringCalculatorKata;
 
@@ -10,9 +11,16 @@ public class StringCalculator
 		{
 			return 0;
 		}
-		var delimiters = new [] { ',', '\n' };
+		var delimiters = new List<char> { ',', '\n' };
 
-		var result = numbers.Split(delimiters)
+		if (numbers.StartsWith("//"))
+		{
+			char newDelimiter = numbers[2];
+			delimiters.Add(newDelimiter);
+			numbers = numbers.Remove(0, 4);
+		}
+		
+		var result = numbers.Split(delimiters.ToArray())
 			.Select(s => int.Parse(s))
 			.Sum();
 
