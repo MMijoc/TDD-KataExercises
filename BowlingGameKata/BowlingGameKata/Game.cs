@@ -2,8 +2,9 @@
 
 public class Game
 {
-	public Game()
+	public void Roll(int pins)
 	{
 
 	}
+
 }
