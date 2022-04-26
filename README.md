@@ -11,9 +11,9 @@ A bowling game is split into 10 frames. During every frame player tries to knock
 
 A score for any given frame is the sum of knocked down pins in that frame, however there are two scenarios where the score is calculated differently, those are:
 1. Strike
-Strike happens if a player knocks down all 10 pins with the first roll in a frame, score for that frame is then calculated as 10 plus sum of knocked down pins in the next two rolls (from the next frame or even next two frame if next roll is also a Strike)
+- Strike happens if a player knocks down all 10 pins with the first roll in a frame, score for that frame is then calculated as 10 plus sum of knocked down pins in the next two rolls (from the next frame or even next two frame if next roll is also a Strike)
 2. Spare
-Spare happens if a player knocks down all 10 pins with two rolls in a frame, score is then calculated as 10 plus number of pins knocked down in the next roll (that roll will be from the next frame)
+- Spare happens if a player knocks down all 10 pins with two rolls in a frame, score is then calculated as 10 plus number of pins knocked down in the next roll (that roll will be from the next frame)
 
 If the 10th frame is a Spare then player has additional roll to determine the score of that Spare; the last roll is used only in the Spare score and and as such does not count towards the total score by itself.
 If the 10th frame is a Strike the plyer has additional two rolls to determine the score of a Strike; that last two rolls are used only to determine Strike score and as such do not count towards the total score by themselves.
