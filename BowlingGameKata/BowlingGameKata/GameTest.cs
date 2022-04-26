@@ -1,3 +1,4 @@
+using System;
 using Xunit;
 
 namespace BowlingGameKata;
@@ -6,18 +7,23 @@ public class GameTest
 {
 	private readonly Game _game = new ();
 
-	private void RoleMultiple(int n, int pinsDown)
+	private void RoleMultiple(params int[] pinsDown)
 	{
-		for (int i = 0; i < n; i++)
+		if (pinsDown.Length > 21)
 		{
-			_game.Roll(pinsDown);
+			throw new ArgumentOutOfRangeException("Maximum number of throws in 21");
+		}
+
+		for (int i = 0; i < pinsDown.Length; i++)
+		{
+			_game.Roll(pinsDown[i]);
 		}
 	}
 
 	[Fact]
 	public void CanScoreGutterGame()
 	{
-		RoleMultiple(20, 0);
+		RoleMultiple(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 		Assert.Equal(0, _game.Score());
 	}
@@ -25,7 +31,7 @@ public class GameTest
 	[Fact]
 	public void CanScoreGameOfOnes()
 	{
-		RoleMultiple(20, 1);
+		RoleMultiple(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
 		Assert.Equal(20, _game.Score());
 	}
@@ -33,18 +39,9 @@ public class GameTest
 	[Fact]
 	public void CanScoreSpareFollowedBy3()
 	{
-		// Spare in the first frame
-		_game.Roll(5);
-		_game.Roll(5);
-
-		// 3 pins in the second frame
-		_game.Roll(3);
-
-		RoleMultiple(17, 0);
-		// Score from the first frame is 13
-		// Score from the second frame is 3
-		// All other frames have score of 0
-		// total score is 16
+		RoleMultiple(5, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		// Score from the first frame is 13, and score from the second frame is 3
+		// Total score is 16
 
 		Assert.Equal(16, _game.Score());
 	}

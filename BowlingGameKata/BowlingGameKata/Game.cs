@@ -18,7 +18,7 @@ public class Game
 		int cursor = 0;
 		for (int frame = 0; frame < 10; frame++)
 		{
-			if (_rolls[cursor] + _rolls[cursor + 1] == 10)
+			if (IsSpare(cursor))
 			{
 				score += 10 + _rolls[cursor + 2];
 			}
@@ -30,5 +30,10 @@ public class Game
 		}
 
 		return score;
+	}
+
+	private bool IsSpare(int cursor)
+	{
+		return _rolls[cursor] + _rolls[cursor + 1] == 10;
 	}
 }
