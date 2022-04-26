@@ -15,13 +15,13 @@ A score for any given frame is the sum of knocked down pins in that frame, howev
 2. Spare
 - Spare happens if a player knocks down all 10 pins with two rolls in a frame, score is then calculated as 10 plus number of pins knocked down in the next roll (that roll will be from the next frame)
 
-If the 10th frame is a Spare then player has additional roll to determine the score of that Spare; the last roll is used only in the Spare score and and as such does not count towards the total score by itself.
-If the 10th frame is a Strike the plyer has additional two rolls to determine the score of a Strike; that last two rolls are used only to determine Strike score and as such do not count towards the total score by themselves.
+If the 10th frame is a Spare then player has additional roll to determine the score of that Spare; the last roll is used only in the Spare score and and as such does not count towards the total score by itself.  
+If the 10th frame is a Strike the plyer has additional two rolls to determine the score of a Strike; that last two rolls are used only to determine Strike score and as such do not count towards the total score by themselves.  
 
-Total game score is the sum of scores from each frame.
-Maximum number of rolls is 21 (if a Spare o Strike occurs in the last frame).
-Minimum number of rolls is 12 (if every frame is a Strike).
-Maximum score is 300 and it can happen only in a game with minimal number of rolls that is if every frame is a Strike.
+Total game score is the sum of scores from each frame.  
+Maximum number of rolls is 21 (if a Spare o Strike occurs in the last frame).  
+Minimum number of rolls is 12 (if every frame is a Strike).  
+Maximum score is 300 and it can happen only in a game with minimal number of rolls that is if every frame is a Strike.  
 
 #### Examples ####
 Example 1:
