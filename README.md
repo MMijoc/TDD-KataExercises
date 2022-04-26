@@ -19,7 +19,7 @@ If the 10th frame is a Spare then player has additional roll to determine the sc
 If the 10th frame is a Strike the plyer has additional two rolls to determine the score of a Strike; that last two rolls are used only to determine Strike score and as such do not count towards the total score by themselves.  
 
 Total game score is the sum of scores from each frame.  
-Maximum number of rolls is 21 (if a Spare o Strike occurs in the last frame).  
+Maximum number of rolls is 21 (if a Spare or a Strike occurs in the last frame).  
 Minimum number of rolls is 12 (if every frame is a Strike).  
 Maximum score is 300 and it can happen only in a game with minimal number of rolls that is if every frame is a Strike.  
 
@@ -28,7 +28,8 @@ Example 1:
 - 1st frame:
 	- 1st roll: 5 pins
 	- 2nd roll: 2 pins
-		- Frame score: 7
+		- Frame score: 7   
+
 Example 2:
 - 1st frame:
 	- 1st roll: 5 pins
@@ -39,7 +40,7 @@ Example 2:
 	- 1st roll: 3 pins
 	- 2nd roll: 4 pins
 		- Frame score: 7
-		- Total score: 20
+		- Total score: 20  
 Example 3:
 - 1st frame:
 	- 1st roll: 10 pins
@@ -49,7 +50,7 @@ Example 3:
 	- 1st roll: 3 pins
 	- 2nd roll: 4 pins
 		- Frame score: 7
-		- Total score: 24
+		- Total score: 24  
 
 Example 4:
 - 1st frame:
@@ -65,7 +66,7 @@ Example 4:
 	- 1st roll: 3 pins
 	- 2nd roll: 4 pins
 		- Frame score: 3 + 4 = 7
-		- Total score: 40 + 7 = 47
+		- Total score: 40 + 7 = 47  
 
 Example 5:
 - 10th frame (all other frames were 0):
@@ -85,7 +86,7 @@ Example 6:
 		- Frame score: 10 + 3 = 13
 - One additional roll:
     - 1st roll: 3 pins
-		- Total score: 13
+		- Total score: 13  
 
 
 # String Calculator Kata #
