@@ -5,13 +5,6 @@ namespace BowlingGameKata;
 public class GameTest
 {
 	[Fact]
-	public void CanRollBall()
-	{
-		Game game = new Game();
-		game.Roll(0);
-	}
-
-	[Fact]
 	public void CanScoreGutterGame()
 	{
 		Game game = new Game();
