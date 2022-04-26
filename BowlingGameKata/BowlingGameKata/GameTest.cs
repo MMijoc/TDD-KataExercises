@@ -56,5 +56,14 @@ public class GameTest
 		Assert.Equal(22, _game.Score());
 	}
 
+	[Fact]
+	public void CanScorePerfectGame()
+	{
+		RoleMultiple(10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10);
+		// Score from the first frame is 16, and score from the second frame is 6
+		// Total score is 22
+
+		Assert.Equal(300, _game.Score());
+	}
 
 }
