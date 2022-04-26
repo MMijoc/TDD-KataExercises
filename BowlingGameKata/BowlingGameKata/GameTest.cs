@@ -46,5 +46,15 @@ public class GameTest
 		Assert.Equal(16, _game.Score());
 	}
 
+	[Fact]
+	public void CanScoreStrikeFollowedBy3And3()
+	{
+		RoleMultiple(10, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		// Score from the first frame is 16, and score from the second frame is 6
+		// Total score is 22
+
+		Assert.Equal(22, _game.Score());
+	}
+
 
 }
