@@ -41,6 +41,8 @@ Example 2:
 	- 2nd roll: 4 pins
 		- Frame score: 7
 		- Total score: 20  
+
+
 Example 3:
 - 1st frame:
 	- 1st roll: 10 pins
