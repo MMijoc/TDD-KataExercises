@@ -11,4 +11,12 @@ public class GameTest
 
 		Assert.NotNull(game);
 	}
+
+	[Fact]
+	public void CanRollBall()
+	{
+		Game game = new Game();
+		game.Roll(0);
+	}
+
 }
