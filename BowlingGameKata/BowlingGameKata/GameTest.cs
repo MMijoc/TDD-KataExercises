@@ -8,5 +8,7 @@ public class GameTest
 	public void CanMakeGame()
 	{
 		Game game = new Game();
+
+		Assert.NotNull(game);
 	}
 }
