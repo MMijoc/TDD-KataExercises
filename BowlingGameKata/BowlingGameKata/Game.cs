@@ -1,4 +1,6 @@
-﻿namespace BowlingGameKata;
+﻿using System;
+
+namespace BowlingGameKata;
 
 public class Game
 {
@@ -7,4 +9,8 @@ public class Game
 
 	}
 
+	internal int Score()
+	{
+		return 0;
+	}
 }
