@@ -39,7 +39,7 @@ public class FizzBuzzTest
 	[Theory]
 	[InlineData(15, "FizzBuzz")]
 	[InlineData(30, "FizzBuzz")]
-	public void ConvertNumber_ReturnsFizBuzzForNumberDivisbleBy3AndBy5(int number, string expectedResult)
+	public void ConvertNumber_ReturnsFizzBuzzForNumberDivisbleBy3AndBy5(int number, string expectedResult)
 	{
 		var result = _fizzBuzz.ConvertNumber(number);
 
