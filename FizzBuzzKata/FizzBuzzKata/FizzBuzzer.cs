@@ -9,9 +9,9 @@ namespace FizzBuzzKata
 
 		}
 
-		public void FizzBuzz()
+		public string FizzBuzz(int number)
 		{
-			throw new NotImplementedException();
+			return "1";
 		}
 	}
 }
