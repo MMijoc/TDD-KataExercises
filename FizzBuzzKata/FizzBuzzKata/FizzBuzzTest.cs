@@ -20,4 +20,12 @@ public class FizzBuzzTest
 		Assert.Equal("1", result);
 	}
 
+	[Fact]
+	public void ReturnsFizzFor3()
+	{
+		FizzBuzzer fizzBuzz = new FizzBuzzer();
+		var result = fizzBuzz.FizzBuzz(3);
+
+		Assert.Equal("Fizz", result);
+	}
 }
