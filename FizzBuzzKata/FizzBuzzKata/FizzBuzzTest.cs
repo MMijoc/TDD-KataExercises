@@ -5,8 +5,9 @@ namespace FizzBuzzKata;
 public class FizzBuzzTest
 {
 	[Fact]
-	public void Test1()
+	public void CanCreateNewFizzBuzz()
 	{
-
+		FizzBuzzer fizzBuzz = new FizzBuzzer();
+		fizzBuzz.FizzBuzz();
 	}
 }
