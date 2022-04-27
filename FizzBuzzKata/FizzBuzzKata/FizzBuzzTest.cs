@@ -4,18 +4,13 @@ namespace FizzBuzzKata;
 
 public class FizzBuzzTest
 {
-	[Fact]
-	public void CanCreateNewFizzBuzz()
-	{
-		FizzBuzzer fizzBuzz = new FizzBuzzer();
-		fizzBuzz.FizzBuzz(0);
-	}
+	private FizzBuzzer _fizzBuzz = new();
 
 	[Fact]
 	public void Returns1For1()
 	{
-		FizzBuzzer fizzBuzz = new FizzBuzzer();
-		var result = fizzBuzz.FizzBuzz(1);
+		
+		var result = _fizzBuzz.FizzBuzz(1);
 
 		Assert.Equal("1", result);
 	}
@@ -23,9 +18,18 @@ public class FizzBuzzTest
 	[Fact]
 	public void ReturnsFizzFor3()
 	{
-		FizzBuzzer fizzBuzz = new FizzBuzzer();
-		var result = fizzBuzz.FizzBuzz(3);
+		var result = _fizzBuzz.FizzBuzz(3);
 
 		Assert.Equal("Fizz", result);
+	}
+
+	[Theory]
+	[InlineData(6, "Fizz")]
+	[InlineData(9, "Fizz")]
+	public void ReturnsFizzForNumberDivisbleBy3(int number, string expectedResult)
+	{
+		var result = _fizzBuzz.FizzBuzz(number);
+
+		Assert.Equal(expectedResult, result);
 	}
 }
