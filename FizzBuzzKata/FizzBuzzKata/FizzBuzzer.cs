@@ -1,33 +1,50 @@
 ﻿using System;
 
-namespace FizzBuzzKata
+namespace FizzBuzzKata;
+
+public class FizzBuzzer
 {
-	public class FizzBuzzer
+	private const string _fizz = "Fizz";
+	private const string _buzz = "Buzz";
+	private const string _fizzBuzz = "FizzBuzz";
+	public void FizzBuzz()
 	{
-		public void FizzBuzz()
+		for (int i = 1; i < 100; i++)
 		{
-			for (int i = 1; i < 100; i++)
-			{
-				Console.WriteLine(ConvertNumber(i));
-			}
+			Console.WriteLine(ConvertNumber(i));
+		}
+	}
+
+	public string ConvertNumber(int number)
+	{
+		if (IsFizzBuzz(number))
+		{
+			return _fizzBuzz;
+		}
+		else if (IsFizz(number))
+		{
+			return _fizz;
+		}
+		else if (IsBuzz(number))
+		{
+			return _buzz;
 		}
 
-		public string ConvertNumber(int number)
-		{
-			if (number % 3 == 0 && number % 5 == 0)
-			{
-				return "FizzBuzz";
-			}
-			else if (number % 3 == 0)
-			{
-				return "Fizz";
-			}
-			else if (number % 5 == 0)
-			{
-				return "Buzz";
-			}
+		return number.ToString();
+	}
 
-			return number.ToString();
-		}
+	private static bool IsBuzz(int number)
+	{
+		return number % 5 == 0;
+	}
+
+	private static bool IsFizz(int number)
+	{
+		return number % 3 == 0;
+	}
+
+	private static bool IsFizzBuzz(int number)
+	{
+		return number % 3 == 0 && number % 5 == 0;
 	}
 }
