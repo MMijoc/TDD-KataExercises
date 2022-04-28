@@ -14,4 +14,15 @@ public class NameInverterTest
 
 		Assert.Throws<ArgumentNullException>(action);
 	}
+
+	[Theory]
+	[InlineData("", "")]
+	[InlineData("    ", "")]
+
+	public void InvertReturnsEmptyStringForEmptyStringOrWhitespace(string name, string expectedResult)
+	{
+		NameInverter inverter = new NameInverter();
+
+		Assert.Equal(expectedResult, inverter.Invert(name));
+	}
 }
