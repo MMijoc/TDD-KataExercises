@@ -38,6 +38,7 @@ public class NameInverterTest
 	{
 		Assert.Equal(expectedResult, _inverter.Invert(name));
 	}
+
 	[Theory]
 	[InlineData("Mr. John Shepard", "Shepard, John")]
 	[InlineData("Mrs. Jane Shepard ", "Shepard, Jane")]
@@ -45,6 +46,15 @@ public class NameInverterTest
 	{
 		Assert.Equal(expectedResult, _inverter.Invert(name));
 	}
+
+	[Theory]
+	[InlineData("John Shepard Sr.", "Shepard, John Sr.")]
+	[InlineData("Mrs. Jane Shepard Sr. PhD.", "Shepard, Jane Sr. PhD.")]
+	public void InvertFullNameWithPostnominals(string name, string expectedResult)
+	{
+		Assert.Equal(expectedResult, _inverter.Invert(name));
+	}
+
 
 
 }
