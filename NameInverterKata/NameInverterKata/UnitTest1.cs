@@ -55,6 +55,12 @@ public class NameInverterTest
 		Assert.Equal(expectedResult, _inverter.Invert(name));
 	}
 
-
+	[Theory]
+	[InlineData("   Mr.  John   Shepard  Sr.", "Shepard, John Sr.")]
+	[InlineData(" Mrs. Jane  Shepard Sr.  PhD.", "Shepard, Jane Sr. PhD.")]
+	public void InvertAcceptanceTest(string name, string expectedResult)
+	{
+		Assert.Equal(expectedResult, _inverter.Invert(name));
+	}
 
 }
