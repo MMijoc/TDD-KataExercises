@@ -5,12 +5,12 @@ namespace NameInverterKata;
 
 public class NameInverterTest
 {
+	private readonly NameInverter _inverter = new();
+
 	[Fact]
 	public void InvertThrowsNullExceptionForNull()
 	{
-		NameInverter inverter = new NameInverter();
-
-		Action action = () => inverter.Invert(null);
+		Action action = () => _inverter.Invert(null);
 
 		Assert.Throws<NullReferenceException>(action);
 	}
@@ -20,9 +20,7 @@ public class NameInverterTest
 	[InlineData("    ", "")]
 	public void InvertReturnsEmptyStringForEmptyStringOrWhitespace(string name, string expectedResult)
 	{
-		NameInverter inverter = new NameInverter();
-
-		Assert.Equal(expectedResult, inverter.Invert(name));
+		Assert.Equal(expectedResult, _inverter.Invert(name));
 	}
 
 	[Theory]
@@ -30,9 +28,7 @@ public class NameInverterTest
 	[InlineData("  John   ", "John")]
 	public void InvertFirstNameReturnsFirstName(string name, string expectedResult)
 	{
-		NameInverter inverter = new NameInverter();
-
-		Assert.Equal(expectedResult, inverter.Invert(name));
+		Assert.Equal(expectedResult, _inverter.Invert(name));
 	}
 
 }
