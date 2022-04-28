@@ -38,6 +38,13 @@ public class NameInverterTest
 	{
 		Assert.Equal(expectedResult, _inverter.Invert(name));
 	}
+	[Theory]
+	[InlineData("Mr. John Shepard", "Shepard, John")]
+	[InlineData("Mrs. Jane Shepard ", "Shepard, Jane")]
+	public void InvertFullNameWithoutHonorifics(string name, string expectedResult)
+	{
+		Assert.Equal(expectedResult, _inverter.Invert(name));
+	}
 
 
 }

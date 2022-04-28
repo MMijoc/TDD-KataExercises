@@ -6,11 +6,14 @@ namespace NameInverterKata;
 
 public class NameInverter
 {
+	private readonly List<string> _honorifics = new() { "Mr.", "Mrs." };
+
 	public string Invert(string name)
 	{
 		List<string> nameParts = new();
+		nameParts = SplitToParts(name);
 
-		nameParts = name.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+		nameParts.RemoveAll(x => _honorifics.Exists(y => y == x));
 
 		if (nameParts.Count == 1)
 		{
@@ -24,5 +27,11 @@ public class NameInverter
 
 		return "";
 
+	}
+
+	private static List<string> SplitToParts(string name)
+	{
+		return name.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+						.ToList();
 	}
 }
