@@ -31,4 +31,13 @@ public class NameInverterTest
 		Assert.Equal(expectedResult, _inverter.Invert(name));
 	}
 
+	[Theory]
+	[InlineData("John Shepard", "Shepard, John")]
+	[InlineData("  John   Shepard ", "Shepard, John")]
+	public void InvertFirstLastReturnsLastCommaFirst(string name, string expectedResult)
+	{
+		Assert.Equal(expectedResult, _inverter.Invert(name));
+	}
+
+
 }
