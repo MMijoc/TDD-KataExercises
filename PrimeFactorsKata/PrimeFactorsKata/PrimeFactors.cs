@@ -16,7 +16,14 @@ public static class PrimeFactors
 			return factors;
 		}
 
-		factors.Add(number);
+		if (number % 2 == 0)
+		{
+			factors.Add(2);
+			number /= 2;
+		}
+
+		if (number != 1)
+			factors.Add(number);
 
 		return factors;
 	}
