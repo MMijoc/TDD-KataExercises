@@ -10,16 +10,14 @@ public static class PrimeFactors
 	public static List<int> Of(int number)
 	{
 		List<int> factors = new();
-		int divisor = 2;
 
-		while (number > 1)
+		for (int divisor = 2; number > 1; divisor++)
 		{
 			while (number % divisor == 0)
 			{
 				factors.Add(divisor);
 				number /= divisor;
 			}
-			divisor++; 
 		}
 
 		return factors;
