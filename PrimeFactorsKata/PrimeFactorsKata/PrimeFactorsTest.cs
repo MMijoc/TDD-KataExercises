@@ -33,4 +33,22 @@ public class PrimeFactorsTest
 		var expectedResult = new List<int> { 2, 2 };
 		Assert.Equal(expectedResult, result);
 	}
+
+	[Fact]
+	public void Of_6()
+	{
+		var result = PrimeFactors.Of(6);
+		var expectedResult = new List<int> { 2, 3 };
+		Assert.Equal(expectedResult, result);
+	}
+
+	[Fact]
+	public void Of_8()
+	{
+		var result = PrimeFactors.Of(8);
+		var expectedResult = new List<int> { 2, 2, 2 };
+		Assert.Equal(expectedResult, result);
+	}
+
+
 }

@@ -16,7 +16,7 @@ public static class PrimeFactors
 			return factors;
 		}
 
-		if (number % 2 == 0)
+		while (number % 2 == 0)
 		{
 			factors.Add(2);
 			number /= 2;
