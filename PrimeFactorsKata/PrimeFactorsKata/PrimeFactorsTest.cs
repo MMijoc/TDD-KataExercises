@@ -50,5 +50,19 @@ public class PrimeFactorsTest
 		Assert.Equal(expectedResult, result);
 	}
 
+	[Fact]
+	public void Of_9()
+	{
+		var result = PrimeFactors.Of(9);
+		var expectedResult = new List<int> { 3, 3 };
+		Assert.Equal(expectedResult, result);
+	}
 
+	[Fact]
+	public void Of_AcceptanceTest()
+	{
+		var result = PrimeFactors.Of(2 * 2 * 2 * 3 * 3 * 5 * 7 * 11);
+		var expectedResult = new List<int> { 2, 2, 2, 3, 3, 5, 7, 11 };
+		Assert.Equal(expectedResult, result);
+	}
 }
