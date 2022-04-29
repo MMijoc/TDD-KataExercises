@@ -5,8 +5,8 @@ namespace PrimeFactorsKata;
 public class UnitTest1
 {
 	[Fact]
-	public void Test1()
+	public void Of_1()
 	{
-
+		Assert.Empty(PrimeFactors.Of(1));
 	}
 }
