@@ -9,6 +9,15 @@ public static class PrimeFactors
 {
 	public static List<int> Of(int number)
 	{
-		return new List<int>();
+		List<int> factors = new();
+
+		if (number == 1)
+		{
+			return factors;
+		}
+
+		factors.Add(number);
+
+		return factors;
 	}
 }
